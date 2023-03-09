@@ -3,7 +3,7 @@
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdLoader
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.admanager.AdManagerAdRequest
+import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.mediation.*
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAd.OnNativeAdLoadedListener
@@ -26,7 +26,7 @@ class NativeCustomEvent
         val loader = AdLoader.Builder(mediationNativeAdConfiguration.context, serverParameter!!)
         loader.forNativeAd(this)
         loader.withAdListener(this)
-        loader.build().loadAd(AdManagerAdRequest.Builder().build())
+        loader.build().loadAd(AdRequest.Builder().build())
     }
 
     override fun onNativeAdLoaded(na: NativeAd) {

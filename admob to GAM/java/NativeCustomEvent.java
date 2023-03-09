@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdLoader;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.admanager.AdManagerAdRequest;
 import com.google.android.gms.ads.mediation.MediationAdLoadCallback;
 import com.google.android.gms.ads.mediation.MediationConfiguration;
 import com.google.android.gms.ads.mediation.MediationNativeAdCallback;
@@ -45,7 +45,7 @@ public class NativeCustomEvent extends AdListener implements NativeAd.OnNativeAd
                 new AdLoader.Builder(mediationNativeAdConfiguration.getContext(), serverParameter);
         loader.forNativeAd(this);
         loader.withAdListener(this);
-        loader.build().loadAd(new AdManagerAdRequest.Builder().build());
+        loader.build().loadAd(new AdRequest.Builder().build());
     }
 
     @Override
